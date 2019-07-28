@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	background: #FFFFFF;
+	color: #555;
+	font-family: 'Lato', 'Arial', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	text-rendering: optimizeLegibility;
+}
+
+/*Globals*/
+
+.container{
+	max-width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+h1{
+	color: #FFFFFF;
+	font-size: 200%;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	word-spacing: 4px;
+}
+
+
+/*Header*/
+header{
+	background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('img/background.jpg');
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+}
+
+header .hero-text-box{
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
