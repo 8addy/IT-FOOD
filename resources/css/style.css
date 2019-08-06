@@ -16,7 +16,7 @@ html{
 
 /*Globals*/
 .container{
-	max-width: 1300px;
+	max-width: 1200px;
 	margin: 0 auto;
 	overflow: hidden;
 }
@@ -119,6 +119,12 @@ ul {
 }
 
 
+.burger div{
+    height: 3px;
+    background: #e67e24;
+    width: 25px;
+    margin: 5px
+}
 
 
 
@@ -133,9 +139,7 @@ header{
     background-attachment: fixed;
 }
 
-header .container{
 
-}
 
 header .hero-text-box{
 	width: 100%;
@@ -152,10 +156,20 @@ header .hero-text-box{
 .logo img{
 	width: 100%;
 }
+header .list{
+    float: right;
+}
 .main-nav{
-	float: right;
+    float: left;
 	list-style: none;
 	margin-top: 55px;
+}
+header .burger {
+    display: inline-block;
+    float: right;
+    margin: 52px 25px 0 25px;
+    cursor: pointer;
+    display: none;
 }
 .main-nav li{
 	display: inline-block;
@@ -175,6 +189,7 @@ header .hero-text-box{
 	transition: 0.4s all;
 	color: #e67e22;
 }
+
 
 /*****************************/
 /**    section-features   ****/
@@ -374,3 +389,215 @@ section{
     margin-right: 10px;
     vertical-align: middle;
 }
+
+
+/*****************************/
+/****   sesction Plans    ****/
+/*****************************/
+
+
+.section-plans{
+    background-color: #f4f4f4;
+}
+.section-plans .plans{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+}
+.plans .plan {
+    background: #fff;
+    padding: 10px 10px 0 10px;
+    border: 1px solid #ddd;
+    margin: 15px 15px;
+  box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.2);
+}
+.plans .plan div{
+    border-bottom: 1px solid #ddd;
+    padding:20px 0;
+}
+
+.plans .plan div:first-child {
+    height: 170px;
+    text-align: center;
+}
+.plans .plan div:nth-child(2){
+    height: 235px;
+}
+.plans .plan div:last-child{
+    border: none;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.plans .plan h3 {
+    font-size: 40px;
+}
+.plans .plan .plan-price{
+    font-size: 35px;
+    color: #e67e22;
+    margin: 10px 0;
+}
+
+.plans .plan .meal-price{
+    font-size: 15px;
+}
+.plans .plan ul li{
+    margin: 20px 0;
+}
+.plans .plan ul li i{
+    color: #e67e22;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+.plans .plan a{
+    margin-top: 5px;
+    width: 200px;
+    margin: 15px;
+}
+
+
+
+
+
+
+/*****************************/
+/******     Footer      ******/
+/*****************************/
+footer{
+    background: #333;
+    padding: 30px 0 15px 0;
+}
+
+footer ul{
+    margin: 20px 0;
+    float: left;
+}
+
+footer ul.social-links {
+    float: right
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 20px;
+}
+footer p {
+    text-align: center;
+}
+
+@media (max-width:990px){
+    
+    header .list .main-nav{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background: #333;
+        top: 0;
+        right: 0;
+        margin: 0;
+        width: 50%;
+        z-index: 5;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 90px;
+        transform: translateX(100%);
+        transition: transform  0.4s ease-out;
+    }
+    header .burger {
+        display: block;
+        z-index: 6;
+        position: absolute;
+        top: -35px;
+        right: -10px;
+        transition: all 0.3s ease-in;
+        height: 27px;
+    }
+    
+    header .show .main-nav{
+        transform: translateX(0);
+    }
+    
+    .show .burger .line1{
+        transform: rotate(45deg);
+        position: absolute;
+        top: 7px;
+        transition: transform 0.3s ease-in;
+    }
+    .show .burger .line2{
+        opacity: 0
+    }
+    .show .burger .line3{
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 7px;
+        transition: transform 0.3s ease-in;
+    }
+    
+    #features{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-meals .row .column{
+        width: 50%;
+    }
+    .app-screen {
+        margin-top: 10%;
+        width: 55%;
+    }
+    
+    .section-cities .cities {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-testimonials {
+        display: none;
+    }
+    .section-plans .plans{
+        display: block;
+    }
+    
+    .section-plans .plans .plan {
+        margin: 15px auto;
+        width: 50%;
+    }
+}
+
+@media(max-width:700px){
+    header .hero-text-box h1{
+        display: none;
+    }
+    #features{
+        grid-template-columns:  1fr;
+    }
+    .section-meals .row .column{
+        width: 100%;
+    }
+    .section-steps .steps{
+        display: block;
+    }
+    .section-steps .steps .steps-box:first-child {
+        text-align: center;
+    }
+    .app-screen {
+    margin-top: 10%;
+    width: 35%;
+    }
+    .section-cities .cities {
+        grid-template-columns:  1fr;
+    }
+    .section-plans .plans .plan {
+        width: 80%;
+    }
+    footer{
+        text-align: center;
+    }
+    footer ul{
+        float: none
+    }
+    footer ul.social-links{
+        float: none
+    }
+}
+
